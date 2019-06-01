@@ -99,10 +99,8 @@
 			children = (
 				1894D3D922A335C80074276B /* Features */,
 				1894D37E22A2FC550074276B /* Extensions */,
-				1894D36C22A2F9360074276B /* AppDelegate.swift */,
-				1894D37322A2F9370074276B /* Assets.xcassets */,
-				1894D37522A2F9370074276B /* LaunchScreen.storyboard */,
-				1894D37822A2F9370074276B /* Info.plist */,
+				1894D40622A338BF0074276B /* Resources */,
+				1894D40722A338E20074276B /* OtherFiles */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -228,6 +226,24 @@
 				1894D3FF22A337BB0074276B /* DetailRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		1894D40622A338BF0074276B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1894D37522A2F9370074276B /* LaunchScreen.storyboard */,
+				1894D37322A2F9370074276B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1894D40722A338E20074276B /* OtherFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1894D36C22A2F9360074276B /* AppDelegate.swift */,
+				1894D37822A2F9370074276B /* Info.plist */,
+			);
+			path = OtherFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,7 +475,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Weather",
 				);
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/OtherFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -483,7 +499,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Weather",
 				);
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/OtherFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
