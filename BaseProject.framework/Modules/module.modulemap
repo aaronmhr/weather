@@ -1,0 +1,11 @@
+framework module BaseProject {
+  umbrella header "BaseProject.h"
+
+  export *
+  module * { export * }
+}
+
+module BaseProject.Swift {
+    header "BaseProject-Swift.h"
+    requires objc
+}
