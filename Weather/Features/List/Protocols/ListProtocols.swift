@@ -6,10 +6,12 @@
 //  Copyright © 2019 Aaron Huánuco. All rights reserved.
 //
 
+import BaseProject
+
 protocol ListInteractorProtocol {
 }
 
-protocol ListRouterProtocol: Navigating {
+protocol ListRouterProtocol {
 }
 
 protocol ListPresenterProtocol {
