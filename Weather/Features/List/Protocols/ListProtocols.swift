@@ -15,7 +15,11 @@ protocol ListRouterProtocol {
 }
 
 protocol ListPresenterProtocol {
+    func viewDidLoad()
+    func didSelectItemAtIndex(_ index: Int)
 }
 
 protocol ListViewProtocol: ViewControllerAdapter {
+    var data: [ListCellViewModel] { get set }
+    
 }

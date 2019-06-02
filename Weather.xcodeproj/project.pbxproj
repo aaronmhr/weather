@@ -10,13 +10,15 @@
 		180A100C22A3FBFF0096E0A3 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A100B22A3FBFF0096E0A3 /* City.swift */; };
 		180A100F22A3FC710096E0A3 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180A100E22A3FC710096E0A3 /* ListCell.xib */; };
 		180A101122A400940096E0A3 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A101022A400940096E0A3 /* ListCell.swift */; };
+		180A101322A4464F0096E0A3 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A101222A4464F0096E0A3 /* ListCellViewModel.swift */; };
+		180A101B22A45C740096E0A3 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A101A22A45C740096E0A3 /* UIColor+.swift */; };
+		180A101D22A45E020096E0A3 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A101C22A45E020096E0A3 /* UIFont+.swift */; };
+		180A102622A465A40096E0A3 /* BaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180A102422A465760096E0A3 /* BaseProject.framework */; };
+		180A102722A465A40096E0A3 /* BaseProject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 180A102422A465760096E0A3 /* BaseProject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1894D36D22A2F9360074276B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894D36C22A2F9360074276B /* AppDelegate.swift */; };
 		1894D37422A2F9370074276B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1894D37322A2F9370074276B /* Assets.xcassets */; };
 		1894D37722A2F9370074276B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1894D37522A2F9370074276B /* LaunchScreen.storyboard */; };
 		1894D3CA22A31AFB0074276B /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894D3C922A31AFB0074276B /* UIWindow+.swift */; };
-		1894D3D622A321550074276B /* BaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1894D3D522A321550074276B /* BaseProject.framework */; };
-		1894D3D722A323120074276B /* BaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1894D3D522A321550074276B /* BaseProject.framework */; };
-		1894D3D822A323120074276B /* BaseProject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1894D3D522A321550074276B /* BaseProject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1894D3EC22A336390074276B /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894D3E222A336390074276B /* ListPresenter.swift */; };
 		1894D3ED22A336390074276B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894D3E422A336390074276B /* ListViewController.swift */; };
 		1894D3EE22A336390074276B /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1894D3E522A336390074276B /* List.storyboard */; };
@@ -38,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1894D3D822A323120074276B /* BaseProject.framework in Embed Frameworks */,
+				180A102722A465A40096E0A3 /* BaseProject.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,13 +51,16 @@
 		180A100B22A3FBFF0096E0A3 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		180A100E22A3FC710096E0A3 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		180A101022A400940096E0A3 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		180A101222A4464F0096E0A3 /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
+		180A101A22A45C740096E0A3 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		180A101C22A45E020096E0A3 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		180A102422A465760096E0A3 /* BaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaseProject.framework; sourceTree = "<group>"; };
 		1894D36922A2F9360074276B /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1894D36C22A2F9360074276B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1894D37322A2F9370074276B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1894D37622A2F9370074276B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1894D37822A2F9370074276B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1894D3C922A31AFB0074276B /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
-		1894D3D522A321550074276B /* BaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaseProject.framework; sourceTree = "<group>"; };
 		1894D3E222A336390074276B /* ListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		1894D3E422A336390074276B /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		1894D3E522A336390074276B /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
@@ -75,8 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1894D3D622A321550074276B /* BaseProject.framework in Frameworks */,
-				1894D3D722A323120074276B /* BaseProject.framework in Frameworks */,
+				180A102622A465A40096E0A3 /* BaseProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +116,7 @@
 		180A100922A3E98A0096E0A3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				180A101222A4464F0096E0A3 /* ListCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -135,7 +140,7 @@
 		1894D36022A2F9360074276B = {
 			isa = PBXGroup;
 			children = (
-				1894D3D522A321550074276B /* BaseProject.framework */,
+				180A102422A465760096E0A3 /* BaseProject.framework */,
 				1894D36B22A2F9360074276B /* Weather */,
 				1894D36A22A2F9360074276B /* Products */,
 			);
@@ -165,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				1894D3C922A31AFB0074276B /* UIWindow+.swift */,
+				180A101A22A45C740096E0A3 /* UIColor+.swift */,
+				180A101C22A45E020096E0A3 /* UIFont+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,11 +385,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1894D40222A337BB0074276B /* DetailViewController.swift in Sources */,
+				180A101D22A45E020096E0A3 /* UIFont+.swift in Sources */,
+				180A101B22A45C740096E0A3 /* UIColor+.swift in Sources */,
 				1894D40422A337BB0074276B /* DetailInteractor.swift in Sources */,
 				1894D3F022A336390074276B /* ListInteractor.swift in Sources */,
 				180A101122A400940096E0A3 /* ListCell.swift in Sources */,
 				1894D3F122A336390074276B /* ListRouter.swift in Sources */,
 				1894D3CA22A31AFB0074276B /* UIWindow+.swift in Sources */,
+				180A101322A4464F0096E0A3 /* ListCellViewModel.swift in Sources */,
 				1894D40022A337BB0074276B /* DetailPresenter.swift in Sources */,
 				1894D3EC22A336390074276B /* ListPresenter.swift in Sources */,
 				1894D3ED22A336390074276B /* ListViewController.swift in Sources */,

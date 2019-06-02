@@ -22,5 +22,12 @@ final class ListPresenter: PresenterProtocol {
 }
 
 extension ListPresenter: ListPresenterProtocol {
-
+    func viewDidLoad() {
+        let cell = ListCellViewModel(image: #imageLiteral(resourceName: "open-weather"), temperature: "20 ºC", time: "15.00", city: "Paris", relevance: "Today")
+        view.data = [cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell]
+    }
+    
+    func didSelectItemAtIndex(_ index: Int) {
+        
+    }
 }

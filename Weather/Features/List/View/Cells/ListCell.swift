@@ -11,4 +11,14 @@ import BaseProject
 
 final class ListCell: UICollectionViewCell, NibReusable {
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+}
+
+extension ListCell {
+    private func setupStyles() {
+        
+    }
 }
