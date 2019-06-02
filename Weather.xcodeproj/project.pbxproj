@@ -77,6 +77,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180A100622A3E8DC0096E0A3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				180A100722A3E8F10096E0A3 /* Models */,
+				180A100822A3E9800096E0A3 /* RequestModels */,
+				180A100A22A3E9910096E0A3 /* PersistencyModels */,
+				180A100922A3E98A0096E0A3 /* ViewModels */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		180A100722A3E8F10096E0A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		180A100822A3E9800096E0A3 /* RequestModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestModels;
+			sourceTree = "<group>";
+		};
+		180A100922A3E98A0096E0A3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		180A100A22A3E9910096E0A3 /* PersistencyModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersistencyModels;
+			sourceTree = "<group>";
+		};
 		1894D36022A2F9360074276B = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +136,7 @@
 		1894D36B22A2F9360074276B /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				180A100622A3E8DC0096E0A3 /* Common */,
 				1894D3D922A335C80074276B /* Features */,
 				1894D37E22A2FC550074276B /* Extensions */,
 				1894D40622A338BF0074276B /* Resources */,
