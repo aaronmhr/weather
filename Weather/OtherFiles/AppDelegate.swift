@@ -15,14 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         let viewController = ListRouter.assembleModule()
-        setMainScreen(viewController: viewController)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        setRoot(navigationController)
         return true
     }
 }
 
 private extension AppDelegate {
-    private func setMainScreen(viewController: UIViewController) {
+    private func setRoot(_ viewController: UIViewController) {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.setRootViewController(viewController)
