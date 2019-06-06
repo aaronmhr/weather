@@ -7,8 +7,13 @@
 //
 
 import BaseProject
+import RxSwift
 
 protocol ListInteractorProtocol {
+    var weatherForecast: Single<CityForecast> { get }
+    var readWeathreForecastDataBase: Single<CityForecast> { get }
+
+    func saveWeatherForecast(_ weatherForecast: CityForecast) -> Completable
 }
 
 protocol ListRouterProtocol {
@@ -22,4 +27,5 @@ protocol ListPresenterProtocol {
 protocol ListViewProtocol: ViewControllerAdapter {
     var data: [ListCellViewModel] { get set }
     
+    func setupNavigationBarTitle(_ title: String)
 }

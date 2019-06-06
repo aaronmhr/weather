@@ -9,9 +9,9 @@
 import UIKit
 
 struct ListCellViewModel {
-    let image: UIImage
+    let image: URL?
     let temperature: String
     let time: String
-    let city: String
-    let relevance: String
+    let weatherDescription: String?
+    let day: String
 }

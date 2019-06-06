@@ -35,7 +35,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Rg-1L-rv6" secondAttribute="trailing" id="IbX-bE-OHo"/>
-                            <constraint firstItem="dug-k1-Mh2" firstAttribute="top" secondItem="3Rg-1L-rv6" secondAttribute="bottom" id="awb-Yj-pzb"/>
+                            <constraint firstAttribute="bottom" secondItem="3Rg-1L-rv6" secondAttribute="bottom" id="awb-Yj-pzb"/>
                             <constraint firstItem="3Rg-1L-rv6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rCF-5h-HFH"/>
                             <constraint firstItem="3Rg-1L-rv6" firstAttribute="top" secondItem="59e-ej-yW5" secondAttribute="bottom" id="sPf-IW-w18"/>
                         </constraints>

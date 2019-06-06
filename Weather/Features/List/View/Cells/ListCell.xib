@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="landscape">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqa-wt-53h" userLabel="WeatherContainer">
-                        <rect key="frame" x="0.0" y="0.0" width="790" height="138"/>
+                        <rect key="frame" x="0.0" y="20" width="790" height="118"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="open-weather" translatesAutoresizingMaskIntoConstraints="NO" id="Ufy-wi-hfY" userLabel="Weather Image">
-                                <rect key="frame" x="20" y="19" width="100" height="100"/>
+                                <rect key="frame" x="20" y="34" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="6u6-vx-OH7"/>
                                     <constraint firstAttribute="height" constant="50" id="O0K-ed-Eo3"/>
@@ -45,15 +45,15 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20º C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-af-PI0" userLabel="Temperature">
-                                <rect key="frame" x="140" y="19" width="74" height="100"/>
+                                <rect key="frame" x="90" y="34" width="74" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0W-Gc-feU" userLabel="Time City View">
-                                <rect key="frame" x="572.5" y="44" width="67.5" height="50"/>
+                                <rect key="frame" x="702.5" y="34" width="67.5" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15.00 h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qN6-Op-L9D" userLabel="Time">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15.00 h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qN6-Op-L9D" userLabel="Time">
                                         <rect key="frame" x="0.0" y="0.0" width="67.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="u4x-af-73b"/>
@@ -62,7 +62,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Paris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nue-F5-6ow" userLabel="City">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Paris" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nue-F5-6ow" userLabel="City">
                                         <rect key="frame" x="0.0" y="30" width="67.5" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="foE-QU-lFc"/>
@@ -142,7 +142,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Retrieved: Today" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BS-Nn-j2M">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Retrieved: Today" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BS-Nn-j2M">
                         <rect key="frame" x="0.0" y="0.0" width="790" height="20"/>
                         <color key="backgroundColor" white="0.89523580194063912" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -195,6 +195,14 @@
                     <exclude reference="v9l-vL-zV2"/>
                 </mask>
             </variation>
+            <connections>
+                <outlet property="day" destination="3BS-Nn-j2M" id="Wqk-RE-RZQ"/>
+                <outlet property="descriptionLabel" destination="nue-F5-6ow" id="1nZ-Gb-JsY"/>
+                <outlet property="iPadDay" destination="ME8-Lh-qUp" id="6cJ-uW-IDU"/>
+                <outlet property="temperautre" destination="fHZ-af-PI0" id="nAK-3L-TcY"/>
+                <outlet property="time" destination="qN6-Op-L9D" id="bC5-eo-twe"/>
+                <outlet property="weatherImage" destination="Ufy-wi-hfY" id="Ckb-Ne-aj0"/>
+            </connections>
             <point key="canvasLocation" x="478.125" y="-28.124999999999996"/>
         </collectionViewCell>
     </objects>

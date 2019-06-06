@@ -7,11 +7,14 @@
 //
 
 import BaseProject
+import RxSwift
 
 protocol ListInteractorDependenciesProtocol {
+    var repository: WeatherRepositoryProtocol { get }
 }
 
 final class ListInteractorDependencies: ListInteractorDependenciesProtocol {
+    lazy var repository: WeatherRepositoryProtocol = OpenWeatherRepository()
 }
 
 final class ListInteractor: InteractorProtocol {
@@ -23,5 +26,15 @@ final class ListInteractor: InteractorProtocol {
 }
 
 extension ListInteractor: ListInteractorProtocol {
-
+    var weatherForecast: Single<CityForecast> {
+        return dependencies.repository.retrieveWeatherForecast
+    }
+    
+    var readWeathreForecastDataBase: Single<CityForecast> {
+        return dependencies.repository.readWeatherForecast
+    }
+    
+    func saveWeatherForecast(_ weatherForecast: CityForecast) -> Completable {
+        return dependencies.repository.saveWeatherForecast(weatherForecast: weatherForecast)
+    }
 }

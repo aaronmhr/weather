@@ -30,13 +30,16 @@ final class ListViewController: UIViewController, ListViewProtocol {
         navigationController?.navigationBar.barTintColor = .white
         let infoButton = UIButton(type: .infoLight)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
-        title = "Weather"
     }
     
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(cellType: ListCell.self)
+    }
+    
+    func setupNavigationBarTitle(_ title: String) {
+        self.title = title
     }
 }
 
@@ -53,6 +56,7 @@ extension ListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ListCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.setupCell(listViewModel: data[indexPath.row]) 
         return cell
     }
 }

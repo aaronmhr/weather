@@ -8,17 +8,31 @@
 
 import UIKit
 import BaseProject
+import Kingfisher
 
 final class ListCell: UICollectionViewCell, NibReusable {
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
+    @IBOutlet private var weatherImage: UIImageView!
+    @IBOutlet private var temperautre: UILabel!
+    @IBOutlet private var time: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var day: UILabel!
+    @IBOutlet private var iPadDay: UILabel!
 }
 
 extension ListCell {
+    func setupCell(listViewModel: ListCellViewModel) {
+        weatherImage.kf.setImage(with: listViewModel.image)
+        temperautre.text = listViewModel.temperature
+        time.text = listViewModel.time
+        descriptionLabel.text = listViewModel.weatherDescription
+        day.text = listViewModel.day
+        iPadDay.text = listViewModel.day
+    }
+    
     private func setupStyles() {
-        
+        temperautre.font = UIFont.light30
+        time.font = UIFont.regular20
+        descriptionLabel.font = UIFont.regular12
+        day.font = UIFont.regular10
     }
 }
