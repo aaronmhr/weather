@@ -46,10 +46,15 @@ final class DetailViewController: UIViewController {
     
     private func setupNavigationController() {
         navigationController?.navigationBar.barTintColor = .white
-        let button = UIButton(type: .system)
-        button.setTitle("Close", for: .normal)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-        button.addTarget(self, action:#selector(closeButtonAction), for: .touchUpInside)
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            let button = UIButton(type: .system)
+            button.setTitle("Close", for: .normal)
+            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+            button.addTarget(self, action:#selector(closeButtonAction), for: .touchUpInside)
+        default:
+            break
+        }
     }
     
     @objc func closeButtonAction() {
