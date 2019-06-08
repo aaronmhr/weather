@@ -9,8 +9,7 @@
 import RxSwift
 
 protocol WeatherRepositoryProtocol {
-    var retrieveWeatherForecast: Single<CityForecast> { get }
-    var readWeatherForecast: Single<CityForecast>  { get }
-    
+    func retrieveWeatherForecast(url: URL) -> Single<CityForecast>
     func saveWeatherForecast(weatherForecast: CityForecast) -> Completable
+    func readWeatherForecast(filterPredicate: String, date: Date) -> Single<CityForecast>
 }

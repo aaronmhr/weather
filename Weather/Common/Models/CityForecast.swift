@@ -8,7 +8,7 @@
 
 import CoreLocation
 
-struct CityForecast {
+struct CityForecast: Equatable {
     let city: String
     let coordinates: CLLocation
     let forecast: [Weather]

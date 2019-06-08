@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Weather {
+struct Weather: Equatable {
     let time: Date
     let temperature: Double
     let image: String?

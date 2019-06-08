@@ -10,9 +10,10 @@ import BaseProject
 import RxSwift
 
 protocol ListInteractorProtocol {
-    var weatherForecast: Single<CityForecast> { get }
-    var readWeathreForecastDataBase: Single<CityForecast> { get }
-
+    var readWeatherForecastDataBase: Single<CityForecast> { get }
+    
+    func urlStringForCity(_ city: String) -> URL?
+    func weatherForecast(url: URL?) -> Single<CityForecast>
     func saveWeatherForecast(_ weatherForecast: CityForecast) -> Completable
 }
 

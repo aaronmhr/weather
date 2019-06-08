@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum APIServiceError: Error {
+enum APIServiceError: Error, Equatable {
     case apiError(String)
     case invalidEndpoint
     case invalidResponse

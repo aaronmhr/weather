@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CityCoordinates {
+struct CityCoordinates: Equatable {
     let longitude: Double
     let latitude: Double
 }

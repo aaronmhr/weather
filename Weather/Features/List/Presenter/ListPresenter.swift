@@ -13,16 +13,22 @@ import RxSwift
 final class ListPresenter: PresenterProtocol {
     let router: ListRouterProtocol
     let interactor: ListInteractorProtocol
+    let apimanager = APIService()
     let disposeBag = DisposeBag()
     weak var view: ListViewProtocol!
+    
+    var cityForecast: CityForecast? {
+        willSet {
+            guard let cityForecast = newValue else { return }
+            view.setupNavigationBarTitle(cityForecast.city)
+        }
+    }
 
     init(withView view: ListViewProtocol, interactor: ListInteractorProtocol, router: ListRouterProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
     }
-    
-    let apimanager = APIService()
     
     lazy var dateFormatterDay: DateFormatter = {
         let formatter = DateFormatter()
@@ -36,33 +42,39 @@ final class ListPresenter: PresenterProtocol {
         return formatter
     }()
     
-    var cityForecast: CityForecast?
+    var viewModels: [ListCellViewModel] = [] {
+        willSet {
+            view.data = newValue
+        }
+    }
 }
 
 extension ListPresenter: ListPresenterProtocol {
     func viewDidLoad() {
-        interactor.weatherForecast
+        interactor.weatherForecast(url: interactor.urlStringForCity(Constants.paris))
             .observeOn(MainScheduler.instance)
             .subscribe { [weak self] event in
                 guard let self = self else  { return }
                 switch event {
                 case .success(let forecast):
-                    self.handleSuccess(forecast: forecast)
+                    let viewModels = self.handleSuccess(forecast: forecast)
+                    self.viewModels = viewModels
                 case .error:
                     self.handleError()
-            }
+                }
         }
         .disposed(by: disposeBag)
     }
 
     func handleError() {
-        interactor.readWeathreForecastDataBase
+        interactor.readWeatherForecastDataBase
             .observeOn(MainScheduler.instance)
             .subscribe { [weak self] event in
                 guard let self = self else  { return }
                 switch event {
                 case .success(let forecast):
-                    self.handleSuccess(forecast: forecast)
+                    let viewModels = self.handleSuccess(forecast: forecast)
+                    self.viewModels = viewModels
                 case .error(let error):
                     self.view.showError(error: error)
                 }
@@ -70,9 +82,8 @@ extension ListPresenter: ListPresenterProtocol {
             .disposed(by: disposeBag)
     }
     
-    func handleSuccess(forecast: CityForecast) {
+    func handleSuccess(forecast: CityForecast) -> [ListCellViewModel] {
         cityForecast = forecast
-        view.setupNavigationBarTitle(forecast.city)
         
         let viewModels = forecast.forecast.map { weather -> ListCellViewModel in
             let imageURL = EndPoint.icon(id: weather.image ?? "").endpointUrl(with: nil)?.absoluteString ?? ""
@@ -90,7 +101,7 @@ extension ListPresenter: ListPresenterProtocol {
                                      weatherDescription: weather.weatherDescription,
                                      day: dateFormatterDay.string(from: weather.time))
         }
-        view.data = viewModels
+        return viewModels
     }
 
     func didSelectItemAtIndex(_ index: Int) {
@@ -105,5 +116,6 @@ extension ListPresenter: ListPresenterProtocol {
     
     private enum Constants {
         static let temperatureUnit = " ºC"
+        static let paris = "Paris,fr"
     }
 }

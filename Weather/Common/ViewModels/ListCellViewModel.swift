@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ListCellViewModel {
+struct ListCellViewModel: Equatable {
     let image: URL?
     let temperature: String
     let time: String

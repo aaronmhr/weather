@@ -9,8 +9,6 @@
 import Foundation
 
 enum RealmServiceError: Error {
-
-    
     case createError
     case deleteError
     case noObjectSavedError

@@ -20,30 +20,14 @@ final class OpenWeatherDependencies: OpenWeatherDependenciesProtocol {
 }
 
 final class OpenWeatherRepository: WeatherRepositoryProtocol {
-    
-    private enum Constants {
-        static let paris = "Paris,fr"
-        static let queryItems = [URLQueryItem(name: "q", value: Constants.paris)]
-        static let databaseQuery = "time >= %@"
-    }
-    
     let dependencies: OpenWeatherDependenciesProtocol
     
     init(dependencies: OpenWeatherDependenciesProtocol = OpenWeatherDependencies()) {
         self.dependencies = dependencies
     }
     
-    var retrieveWeatherForecast: Single<CityForecast> {
-        return Single<CityForecast>.create { [weak self] single in
-
-            let urlString = EndPoint.city.endpointUrl(with: Constants.queryItems)?.absoluteString
-            
-            guard let urlUnwrapped = urlString,
-                let url = URL(string: urlUnwrapped) else {
-                single(.error(APIServiceError.invalidEndpoint))
-                return Disposables.create()
-            }
-            
+    func retrieveWeatherForecast(url: URL) -> Single<CityForecast> {
+        return Single<CityForecast>.create { [weak self] single in            
             self?.dependencies.apiService.fetchResources(url: url, completion: { (result: Result<Response, APIServiceError>) in
                 switch result {
                 case .success(let response):
@@ -51,7 +35,6 @@ final class OpenWeatherRepository: WeatherRepositoryProtocol {
                         single(.error(APIServiceError.invalidResponse))
                         return
                     }
-                    
                     single(.success(forecast))
                 case .failure(let error):
                     single(.error(error))
@@ -61,11 +44,10 @@ final class OpenWeatherRepository: WeatherRepositoryProtocol {
         }
     }
     
-    var readWeatherForecast: Single<CityForecast> {
+    func readWeatherForecast(filterPredicate: String, date: Date) -> Single<CityForecast> {
         return Single<CityForecast>.create { [weak self] single in
-            let currentDate = Date()
             let results = self?.dependencies.persistencyService.read(RealmCityForecast.self)
-            guard let forecastDatabaseResult = results?.first?.forecast.filter(Constants.databaseQuery, currentDate),
+            guard let forecastDatabaseResult = results?.first?.forecast.filter(filterPredicate, date),
                 let cityDatabase = results?.first else {
                     single(.error(RealmServiceError.noObjectSavedError))
                     return Disposables.create()
@@ -102,6 +84,5 @@ final class OpenWeatherRepository: WeatherRepositoryProtocol {
             completable(.completed)
             return Disposables.create()
         }
-
     }
 }

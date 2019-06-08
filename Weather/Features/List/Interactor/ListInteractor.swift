@@ -26,15 +26,32 @@ final class ListInteractor: InteractorProtocol {
 }
 
 extension ListInteractor: ListInteractorProtocol {
-    var weatherForecast: Single<CityForecast> {
-        return dependencies.repository.retrieveWeatherForecast
+    func urlStringForCity(_ city: String) -> URL? {
+        let queryItems = [URLQueryItem(name: "q", value: city)]
+        guard let stringURL = EndPoint.city.endpointUrl(with: queryItems)?.absoluteString,
+            let url = URL(string: stringURL) else {
+                return nil
+        }
+        return url
     }
     
-    var readWeathreForecastDataBase: Single<CityForecast> {
-        return dependencies.repository.readWeatherForecast
+    func weatherForecast(url: URL?) -> Single<CityForecast> {
+        guard let url = url else {
+            return .error(APIServiceError.invalidEndpoint)
+        }
+        return dependencies.repository.retrieveWeatherForecast(url: url)
+    }
+    
+    var readWeatherForecastDataBase: Single<CityForecast> {
+        let currentDate = Date()
+        return dependencies.repository.readWeatherForecast(filterPredicate: Constants.databaseQuery, date: currentDate)
     }
     
     func saveWeatherForecast(_ weatherForecast: CityForecast) -> Completable {
         return dependencies.repository.saveWeatherForecast(weatherForecast: weatherForecast)
     }
+}
+
+private enum Constants {
+    static let databaseQuery = "time >= %@"
 }
