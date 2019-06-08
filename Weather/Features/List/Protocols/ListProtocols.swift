@@ -17,6 +17,7 @@ protocol ListInteractorProtocol {
 }
 
 protocol ListRouterProtocol {
+    func presentDetailView(cityForeCast: CityForecast, animated: Bool)
 }
 
 protocol ListPresenterProtocol {

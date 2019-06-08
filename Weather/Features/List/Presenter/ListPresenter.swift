@@ -35,6 +35,8 @@ final class ListPresenter: PresenterProtocol {
         formatter.dateFormat = "HH:mm a"
         return formatter
     }()
+    
+    var cityForecast: CityForecast?
 }
 
 extension ListPresenter: ListPresenterProtocol {
@@ -62,13 +64,14 @@ extension ListPresenter: ListPresenterProtocol {
                 case .success(let forecast):
                     self.handleSuccess(forecast: forecast)
                 case .error(let error):
-                    print("Error: \(error.localizedDescription)")
+                    self.view.showError(error: error)
                 }
             }
             .disposed(by: disposeBag)
     }
     
     func handleSuccess(forecast: CityForecast) {
+        cityForecast = forecast
         view.setupNavigationBarTitle(forecast.city)
         
         let viewModels = forecast.forecast.map { weather -> ListCellViewModel in
@@ -87,12 +90,17 @@ extension ListPresenter: ListPresenterProtocol {
                                      weatherDescription: weather.weatherDescription,
                                      day: dateFormatterDay.string(from: weather.time))
         }
-        
         view.data = viewModels
     }
 
     func didSelectItemAtIndex(_ index: Int) {
-        print(index)
+        guard let cityForecast = cityForecast,
+        cityForecast.forecast.indices.contains(index) else {
+            view.showError(error: WeatherError.generic)
+            return
+        }
+        let detailCityForecast = CityForecast(city: cityForecast.city, coordinates: cityForecast.coordinates, forecast: [cityForecast.forecast[index]])
+        router.presentDetailView(cityForeCast: detailCityForecast, animated: true)
     }
     
     private enum Constants {

@@ -28,8 +28,6 @@ final class ListViewController: UIViewController, ListViewProtocol {
     
     private func setupNavigationController() {
         navigationController?.navigationBar.barTintColor = .white
-        let infoButton = UIButton(type: .infoLight)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
     }
     
     private func setupCollectionView() {

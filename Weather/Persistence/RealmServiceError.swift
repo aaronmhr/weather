@@ -9,7 +9,22 @@
 import Foundation
 
 enum RealmServiceError: Error {
+
+    
     case createError
     case deleteError
     case noObjectSavedError
+}
+
+extension RealmServiceError: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .createError:
+            return "Could not save on database"
+        case .deleteError:
+            return "Could not delete from database"
+        case .noObjectSavedError:
+            return "Could not find or read saved object"
+        }
+    }
 }

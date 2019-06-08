@@ -8,6 +8,7 @@
 
 import UIKit
 import BaseProject
+import CoreLocation
 
 final class DetailRouter: RouterProtocol {
     weak var view: DetailViewController!
@@ -16,10 +17,11 @@ final class DetailRouter: RouterProtocol {
         self.view = view
     }
 
-    static func assembleModule(viewController: DetailViewController = defaultViewController) -> UIViewController {
+    static func assembleModule(cityForecast: CityForecast,
+        viewController: DetailViewController = defaultViewController) -> UIViewController {
         let router = DetailRouter(withView: viewController)
 
-        let interactor = DetailInteractor()
+        let interactor = DetailInteractor(cityForecast: cityForecast)
         let presenter = DetailPresenter(withView: viewController, interactor: interactor, router: router)
 
         viewController.presenter = presenter
@@ -33,5 +35,14 @@ final class DetailRouter: RouterProtocol {
 }
 
 extension DetailRouter: DetailRouterProtocol {
-
+    func closeScreen(animated: Bool) {
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            view.dismiss(animated: animated, completion: nil)
+        case .phone:
+            view.navigationController?.popViewController(animated: animated)
+        default:
+            view.showError(error: WeatherError.generic)
+        }
+    }
 }

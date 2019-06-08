@@ -15,9 +15,12 @@ final class DetailInteractorDependencies: DetailInteractorDependenciesProtocol {
 }
 
 final class DetailInteractor: InteractorProtocol {
+    let cityForecast: CityForecast
     let dependencies: DetailInteractorDependenciesProtocol
 
-    init(dependencies: DetailInteractorDependenciesProtocol = DetailInteractorDependencies()) {
+    init(cityForecast: CityForecast,
+        dependencies: DetailInteractorDependenciesProtocol = DetailInteractorDependencies()) {
+        self.cityForecast = cityForecast
         self.dependencies = dependencies
     }
 }

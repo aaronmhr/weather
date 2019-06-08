@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1740AA676674A484D1A0BC43 /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A16839A482FA7A1094DF721 /* Pods_Weather.framework */; };
 		18081B3322A9B8C50048857A /* WeatherRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18081B3222A9B8C50048857A /* WeatherRepositoryProtocol.swift */; };
+		18081B3522AA16510048857A /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18081B3422AA16510048857A /* ErrorPresenter.swift */; };
+		1808BBDA22AB0F6F0002D5B3 /* CityCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1808BBD922AB0F6F0002D5B3 /* CityCoordinates.swift */; };
 		180A100C22A3FBFF0096E0A3 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A100B22A3FBFF0096E0A3 /* Weather.swift */; };
 		180A100F22A3FC710096E0A3 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180A100E22A3FC710096E0A3 /* ListCell.xib */; };
 		180A101122A400940096E0A3 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A101022A400940096E0A3 /* ListCell.swift */; };
@@ -22,6 +24,7 @@
 		180A102F22A467D10096E0A3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A102E22A467D10096E0A3 /* APIManager.swift */; };
 		180A103722A489030096E0A3 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A103622A489030096E0A3 /* WeatherTests.swift */; };
 		180A103F22A489200096E0A3 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A103E22A489200096E0A3 /* EndpointTests.swift */; };
+		180AE5F522AAD8440050A308 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180AE5F422AAD8440050A308 /* DetailViewModel.swift */; };
 		180C19F422A6373900E20480 /* RequestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C19F322A6373900E20480 /* RequestModels.swift */; };
 		18157BF622A8632200F834EA /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18157BF522A8632200F834EA /* RealmService.swift */; };
 		18157BF822A866E300F834EA /* RealmServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18157BF722A866E300F834EA /* RealmServiceError.swift */; };
@@ -75,6 +78,8 @@
 
 /* Begin PBXFileReference section */
 		18081B3222A9B8C50048857A /* WeatherRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepositoryProtocol.swift; sourceTree = "<group>"; };
+		18081B3422AA16510048857A /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		1808BBD922AB0F6F0002D5B3 /* CityCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCoordinates.swift; sourceTree = "<group>"; };
 		180A100B22A3FBFF0096E0A3 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		180A100E22A3FC710096E0A3 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		180A101022A400940096E0A3 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 		180A103622A489030096E0A3 /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
 		180A103822A489030096E0A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180A103E22A489200096E0A3 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		180AE5F422AAD8440050A308 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		180C19F322A6373900E20480 /* RequestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModels.swift; sourceTree = "<group>"; };
 		18157BF522A8632200F834EA /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		18157BF722A866E300F834EA /* RealmServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServiceError.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				185F3E4422A6EF5D00E1DC8A /* CityForecast.swift */,
+				1808BBD922AB0F6F0002D5B3 /* CityCoordinates.swift */,
 				180A100B22A3FBFF0096E0A3 /* Weather.swift */,
 			);
 			path = Models;
@@ -176,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				180A101222A4464F0096E0A3 /* ListCellViewModel.swift */,
+				180AE5F422AAD8440050A308 /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -239,7 +247,6 @@
 		1894D36022A2F9360074276B = {
 			isa = PBXGroup;
 			children = (
-				180A102422A465760096E0A3 /* BaseProject.framework */,
 				1894D36B22A2F9360074276B /* Weather */,
 				180A103522A489030096E0A3 /* WeatherTests */,
 				1894D36A22A2F9360074276B /* Products */,
@@ -279,6 +286,7 @@
 				180A101A22A45C740096E0A3 /* UIColor+.swift */,
 				180A101C22A45E020096E0A3 /* UIFont+.swift */,
 				181FA03122A5D0A800E24A80 /* URLSession+.swift */,
+				18081B3422AA16510048857A /* ErrorPresenter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -420,6 +428,7 @@
 		71B1FCAD7E9DBA39F4E49C77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				180A102422A465760096E0A3 /* BaseProject.framework */,
 				3A16839A482FA7A1094DF721 /* Pods_Weather.framework */,
 				891D61464D6E5EB6E0D0D40E /* Pods_WeatherTests.framework */,
 			);
@@ -632,6 +641,7 @@
 				180A101D22A45E020096E0A3 /* UIFont+.swift in Sources */,
 				180A101B22A45C740096E0A3 /* UIColor+.swift in Sources */,
 				1894D40422A337BB0074276B /* DetailInteractor.swift in Sources */,
+				1808BBDA22AB0F6F0002D5B3 /* CityCoordinates.swift in Sources */,
 				1894D3F022A336390074276B /* ListInteractor.swift in Sources */,
 				180A101122A400940096E0A3 /* ListCell.swift in Sources */,
 				185F3E4522A6EF5D00E1DC8A /* CityForecast.swift in Sources */,
@@ -639,7 +649,9 @@
 				1894D3CA22A31AFB0074276B /* UIWindow+.swift in Sources */,
 				180A101322A4464F0096E0A3 /* ListCellViewModel.swift in Sources */,
 				1894D40022A337BB0074276B /* DetailPresenter.swift in Sources */,
+				18081B3522AA16510048857A /* ErrorPresenter.swift in Sources */,
 				1894D3EC22A336390074276B /* ListPresenter.swift in Sources */,
+				180AE5F522AAD8440050A308 /* DetailViewModel.swift in Sources */,
 				1894D3ED22A336390074276B /* ListViewController.swift in Sources */,
 				180A102F22A467D10096E0A3 /* APIManager.swift in Sources */,
 				18157BFC22A8699000F834EA /* RealmWeather.swift in Sources */,

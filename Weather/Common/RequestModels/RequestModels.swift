@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 // MARK: - Response
 struct Response: Codable {
@@ -21,8 +22,14 @@ struct Response: Codable {
 struct CityResponse: Codable {
     let id: Int?
     let name: String?
+    let coord: CityCoordinatesResponse
     let country: String?
     let population, timezone: Int?
+}
+
+// MARK: - Coord
+struct CityCoordinatesResponse: Codable {
+    let lat, lon: Double?
 }
 
 // MARK: - ListResponse
@@ -61,7 +68,9 @@ struct WeatherResponse: Codable {
 
 extension Response {
     var asWeatherForecast: CityForecast? {
-        guard let city = self.city?.name else {
+        guard let cityName = city?.name,
+            let latitude = city?.coord.lat,
+        let longitude = city?.coord.lon else {
             return nil
         }
         let weatherArray = self.list.map { element -> Weather? in
@@ -73,6 +82,6 @@ extension Response {
             let weather = element.weather.first
             return Weather(time: time, temperature: temperature, image: weather?.icon, weatherDescription: weather?.weatherDescription)
             }.compactMap { $0 }
-        return CityForecast(city: city, forecast: weatherArray)
+        return CityForecast(city: cityName, coordinates: CLLocation(latitude: latitude, longitude: longitude), forecast: weatherArray)
     }
 }

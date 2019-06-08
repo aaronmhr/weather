@@ -33,5 +33,25 @@ final class ListRouter: RouterProtocol {
 }
 
 extension ListRouter: ListRouterProtocol {
+    func presentDetailView(cityForeCast: CityForecast, animated: Bool) {
+        let detailViewController = DetailRouter.assembleModule(cityForecast: cityForeCast)
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            let navigationController = UINavigationController(rootViewController: detailViewController)
+            view.present(navigationController, animated: animated, completion: nil)
+        case .phone:
+            view.navigationController?.pushViewController(detailViewController, animated: animated)
+        default:
+            view.showError(error: WeatherError.generic)
+        }
+    }
+}
 
+
+enum WeatherError: Error {
+    case generic
+    
+    var localizedDescription: String {
+        return "Something went wrong"
+    }
 }

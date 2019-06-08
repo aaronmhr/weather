@@ -7,15 +7,22 @@
 //
 
 import BaseProject
+import CoreLocation
 
 protocol DetailInteractorProtocol {
+    var cityForecast: CityForecast { get }
 }
 
 protocol DetailRouterProtocol {
+    func closeScreen(animated: Bool)
 }
 
 protocol DetailPresenterProtocol {
+    func viewDidLoad()
+    func closeButtonDidPress()
 }
 
 protocol DetailViewProtocol: ViewControllerAdapter {
+    var model: ListCellViewModel? { get set }
+    var coordinates: CLLocation? { get set }
 }

@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import CoreLocation
 
 protocol OpenWeatherDependenciesProtocol {
     var apiService: APIService { get }
@@ -65,12 +66,14 @@ final class OpenWeatherRepository: WeatherRepositoryProtocol {
             let currentDate = Date()
             let results = self?.dependencies.persistencyService.read(RealmCityForecast.self)
             guard let forecastDatabaseResult = results?.first?.forecast.filter(Constants.databaseQuery, currentDate),
-                let city = results?.first?.city else {
+                let cityDatabase = results?.first else {
                     single(.error(RealmServiceError.noObjectSavedError))
                     return Disposables.create()
             }
             let forecastDatabase = Array(forecastDatabaseResult.map { $0.asWeather })
-            let realmForecast = CityForecast(city: city, forecast: forecastDatabase)
+            let realmForecast = CityForecast(city: cityDatabase.city,
+                                             coordinates: CLLocation(latitude: cityDatabase.latitude, longitude: cityDatabase.longitude),
+                                             forecast: forecastDatabase)
             single(.success(realmForecast))
             return Disposables.create()
         }

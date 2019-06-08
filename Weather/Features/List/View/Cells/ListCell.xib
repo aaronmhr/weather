@@ -118,12 +118,12 @@
                                 <exclude reference="ME8-Lh-qUp"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Nqp-OF-AiC"/>
-                                <exclude reference="z7Z-Su-uiK"/>
                                 <exclude reference="2LI-ZL-mb9"/>
                                 <exclude reference="Xu4-Is-jrR"/>
                                 <exclude reference="bve-vZ-es4"/>
                                 <exclude reference="rSj-rT-vIl"/>
+                                <exclude reference="Nqp-OF-AiC"/>
+                                <exclude reference="z7Z-Su-uiK"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -131,14 +131,14 @@
                                 <include reference="ME8-Lh-qUp"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Nqp-OF-AiC"/>
-                                <exclude reference="SGq-y7-eOe"/>
-                                <exclude reference="Y6w-sl-v98"/>
-                                <include reference="z7Z-Su-uiK"/>
                                 <include reference="2LI-ZL-mb9"/>
                                 <include reference="Xu4-Is-jrR"/>
                                 <include reference="bve-vZ-es4"/>
                                 <include reference="rSj-rT-vIl"/>
+                                <include reference="Nqp-OF-AiC"/>
+                                <exclude reference="SGq-y7-eOe"/>
+                                <exclude reference="Y6w-sl-v98"/>
+                                <include reference="z7Z-Su-uiK"/>
                             </mask>
                         </variation>
                     </view>
@@ -199,7 +199,7 @@
                 <outlet property="day" destination="3BS-Nn-j2M" id="Wqk-RE-RZQ"/>
                 <outlet property="descriptionLabel" destination="nue-F5-6ow" id="1nZ-Gb-JsY"/>
                 <outlet property="iPadDay" destination="ME8-Lh-qUp" id="6cJ-uW-IDU"/>
-                <outlet property="temperautre" destination="fHZ-af-PI0" id="nAK-3L-TcY"/>
+                <outlet property="temperature" destination="fHZ-af-PI0" id="nAK-3L-TcY"/>
                 <outlet property="time" destination="qN6-Op-L9D" id="bC5-eo-twe"/>
                 <outlet property="weatherImage" destination="Ufy-wi-hfY" id="Ckb-Ne-aj0"/>
             </connections>

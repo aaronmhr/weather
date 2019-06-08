@@ -12,17 +12,21 @@ import Kingfisher
 
 final class ListCell: UICollectionViewCell, NibReusable {
     @IBOutlet private var weatherImage: UIImageView!
-    @IBOutlet private var temperautre: UILabel!
+    @IBOutlet private var temperature: UILabel!
     @IBOutlet private var time: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
     @IBOutlet private var day: UILabel!
     @IBOutlet private var iPadDay: UILabel!
+    
+    lazy var detail: DetailViewModel = {
+        return DetailViewModel(image: weatherImage.image, temperature: temperature.text, time: time.text, day: day.text)
+    }()
 }
 
 extension ListCell {
     func setupCell(listViewModel: ListCellViewModel) {
         weatherImage.kf.setImage(with: listViewModel.image)
-        temperautre.text = listViewModel.temperature
+        temperature.text = listViewModel.temperature
         time.text = listViewModel.time
         descriptionLabel.text = listViewModel.weatherDescription
         day.text = listViewModel.day
@@ -30,7 +34,7 @@ extension ListCell {
     }
     
     private func setupStyles() {
-        temperautre.font = UIFont.light30
+        temperature.font = UIFont.light30
         time.font = UIFont.regular20
         descriptionLabel.font = UIFont.regular12
         day.font = UIFont.regular10

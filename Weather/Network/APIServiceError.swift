@@ -15,3 +15,21 @@ enum APIServiceError: Error {
     case noData
     case decodeError
 }
+
+// TODO: The error descriptions could be localized
+extension APIServiceError: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .apiError:
+            return "Could not reach API successfully"
+        case .invalidEndpoint:
+            return "Could not build propper URL"
+        case .invalidResponse:
+            return "Could not get propper response"
+        case .noData:
+            return "Could not find data"
+        case .decodeError:
+            return "Could not decode data"
+        }
+    }
+}
