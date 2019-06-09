@@ -8,7 +8,11 @@
 
 import BaseProject
 
-extension ViewControllerAdapter {
+protocol ErrorPresenter: class {
+        func showError(error: Error)
+}
+
+extension ErrorPresenter where Self: UIViewController {
     func showError(error: Error) {
         switch error {
         case let apiError as APIServiceError:

@@ -10,7 +10,7 @@ import BaseProject
 import UIKit
 import RxSwift
 
-final class ListPresenter: PresenterProtocol {
+final class ListPresenter {
     let router: ListRouterProtocol
     let interactor: ListInteractorProtocol
     let apimanager = APIService()

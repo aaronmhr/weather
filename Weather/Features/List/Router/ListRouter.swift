@@ -9,7 +9,7 @@
 import BaseProject
 import UIKit
 
-final class ListRouter: RouterProtocol {
+final class ListRouter: Storyboarded {
     weak var view: ListViewController!
 
     init(withView view: ListViewController) {

@@ -8,20 +8,11 @@
 
 import BaseProject
 
-protocol DetailInteractorDependenciesProtocol {
-}
-
-final class DetailInteractorDependencies: DetailInteractorDependenciesProtocol {
-}
-
-final class DetailInteractor: InteractorProtocol {
+final class DetailInteractor {
     let cityForecast: CityForecast
-    let dependencies: DetailInteractorDependenciesProtocol
 
-    init(cityForecast: CityForecast,
-        dependencies: DetailInteractorDependenciesProtocol = DetailInteractorDependencies()) {
+    init(cityForecast: CityForecast) {
         self.cityForecast = cityForecast
-        self.dependencies = dependencies
     }
 }
 

@@ -22,7 +22,7 @@ protocol DetailPresenterProtocol {
     func closeButtonDidPress()
 }
 
-protocol DetailViewProtocol: ViewControllerAdapter {
+protocol DetailViewProtocol: ErrorPresenter {
     var model: ListCellViewModel? { get set }
     var coordinates: CLLocation? { get set }
 }

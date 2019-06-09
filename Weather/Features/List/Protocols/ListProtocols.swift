@@ -26,7 +26,7 @@ protocol ListPresenterProtocol {
     func didSelectItemAtIndex(_ index: Int)
 }
 
-protocol ListViewProtocol: ViewControllerAdapter {
+protocol ListViewProtocol: ErrorPresenter {
     var data: [ListCellViewModel] { get set }
     
     func setupNavigationBarTitle(_ title: String)

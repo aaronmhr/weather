@@ -16,7 +16,7 @@ class DetailInteractorTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        sut = DetailInteractor(cityForecast: TestObjects.cityForecast, dependencies: DetailInteractorDependencies())
+        sut = DetailInteractor(cityForecast: TestObjects.cityForecast)
     }
     
     override func tearDown() {

@@ -44,6 +44,7 @@ class ListPresenterTests: XCTestCase {
 // MARK: - Mock View
 
 final class MockListView: ListViewProtocol {
+    
     var presenter: ListPresenterProtocol!
     
     var data: [ListCellViewModel] = []
@@ -52,10 +53,7 @@ final class MockListView: ListViewProtocol {
     func setupNavigationBarTitle(_ title: String) {
         isNavigationBarTitleSet = true
     }
-    
-    var adapterView: UIView { return UIView() }
-    var adapterNavigation: UINavigationController? { return UINavigationController() }
-    func present(_ view: UIViewController, animated: Bool) { }
+    func showError(error: Error) { }
 }
 
 // MARK: - Mock Interactor

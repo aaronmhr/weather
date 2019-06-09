@@ -10,7 +10,7 @@ import UIKit
 import BaseProject
 import CoreLocation
 
-final class DetailRouter: RouterProtocol {
+final class DetailRouter: Storyboarded {
     weak var view: DetailViewController!
 
     init(withView view: DetailViewController) {

@@ -9,7 +9,7 @@
 import UIKit
 import BaseProject
 
-final class DetailPresenter: PresenterProtocol {
+final class DetailPresenter {
     let router: DetailRouterProtocol
     let interactor: DetailInteractorProtocol
     weak var view: DetailViewProtocol!

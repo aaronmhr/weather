@@ -17,7 +17,7 @@ final class ListInteractorDependencies: ListInteractorDependenciesProtocol {
     lazy var repository: WeatherRepositoryProtocol = OpenWeatherRepository()
 }
 
-final class ListInteractor: InteractorProtocol {
+final class ListInteractor {
     let dependencies: ListInteractorDependenciesProtocol
 
     init(dependencies: ListInteractorDependenciesProtocol = ListInteractorDependencies()) {
